@@ -435,6 +435,9 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
         else if (this->isActiveWindow())
         {
             this->close();
+            #ifdef Q_OS_MAC
+            this->destroy();
+            #endif
         }
     }
     // Ctrl + Q = Exit
@@ -446,8 +449,12 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     // Control + W = Close Window
     else if (e->modifiers() & Qt::ControlModifier && e->key() == Qt::Key_W)
     {
-        if (this->isActiveWindow())
+        if (this->isActiveWindow()){
             this->close();
+            #ifdef Q_OS_MAC
+            this->destroy();
+            #endif
+        }
     }
 }
 
@@ -501,7 +508,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
     else
     {
         MWHideWindow();
+        #ifdef Q_OS_MAC
+        QMainWindow::closeEvent(event);
+        #else
         event->ignore();
+        #endif
     }
 }
 

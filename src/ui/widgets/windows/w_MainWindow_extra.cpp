@@ -41,6 +41,7 @@ void MainWindow::MWShowWindow()
 #ifdef Q_OS_MAC
     ProcessSerialNumber psn = { 0, kCurrentProcess };
     TransformProcessType(&psn, kProcessTransformToForegroundApplication);
+    this->raise();
 #endif
     MWToggleVisibilitySetText();
 }
