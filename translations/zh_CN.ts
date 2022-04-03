@@ -1784,11 +1784,11 @@ If your V2Ray core filename happened to be &apos;qv2ray&apos;-something, you are
     </message>
     <message>
       <source>Adapt Dark Theme</source>
-      <translation>使用浅色界面图标</translation>
+      <translation>适应暗色主题</translation>
     </message>
     <message>
       <source>Adapt Dark Tray Theme</source>
-      <translation>使用浅色托盘图标</translation>
+      <translation>适应暗色托盘主题</translation>
     </message>
     <message>
       <source>V2Ray Core Settings</source>
